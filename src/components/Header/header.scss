@@ -1,0 +1,11 @@
+@import '/Scan.project/src/variables.scss'; 
+
+.header {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-family;
+}
