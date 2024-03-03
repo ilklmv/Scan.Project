@@ -53,6 +53,7 @@ $font-secondary: 'Inter', sans-serif;
     color: $color-primary;
     background: transparent;
     border: none;
+    cursor: pointer;
 }
 
 .line {
@@ -68,4 +69,5 @@ $font-secondary: 'Inter', sans-serif;
     border: none;
     width: 4.063rem;
     height: 1.625rem;
+    cursor: pointer;
 }
