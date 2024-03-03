@@ -1,11 +1,71 @@
-@import '/Scan.project/src/variables.scss'; 
+// Основные цвета
+$color-primary: #029491;
+$color-black: #000000;
+$color-white: #FFFFFF;
+
+// Дополнительные цвета
+$color-orange: #FFB64F;
+$color-light-blue: #7CE3E1;
+$color-dark-blue: #5970FF;
+
+// Шрифт
+$font-primary: 'Fira Sans', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+
 
 .header {
-  background-color: $primary-color;
-  color: $white-color;
-  padding: 1rem;
+  background-color: $color-white;
+  color: $color-black;
+  margin: 1rem 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-family: $font-family;
+  font-family: $font-secondary;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 14.75rem;
+    list-style: none;
+    color: $color-black;
+
+    li a {
+        text-decoration: none; 
+        color: inherit; 
+        transition: color 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.accountPanel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.signUp {
+    font-family: $font-secondary;
+    color: $color-primary;
+    background: transparent;
+    border: none;
+}
+
+.line {
+    margin: 0rem 1rem;
+}
+
+.login {
+    font-family: $font-secondary;
+    font-weight: 500;
+    color: $color-black;
+    background-color: $color-light-blue;
+    border-radius: 5px;
+    border: none;
+    width: 4.063rem;
+    height: 1.625rem;
 }

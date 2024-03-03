@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./logo";
+import Logo from "./logoHeader";
 import Menu from "./menu";
 import AccountPanel from "./accountPanel";
 import './header.scss';

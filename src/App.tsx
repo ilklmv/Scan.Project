@@ -1,10 +1,15 @@
 import React from 'react';
 import Header from './components/Header/header';
+import Footer from './components/Footer/footer';
 import './App.scss';
+
 
 function App() {
   return (
-    <Header />
+    <div className='App'>
+      <Header />
+      <Footer />
+    </div>
   );
 }
 
