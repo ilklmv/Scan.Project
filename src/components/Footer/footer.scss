@@ -1,0 +1,44 @@
+// Основные цвета
+$color-primary: #029491;
+$color-black: #000000;
+$color-white: #FFFFFF;
+
+// Дополнительные цвета
+$color-orange: #FFB64F;
+$color-light-blue: #7CE3E1;
+$color-dark-blue: #5970FF;
+
+// Шрифт
+$font-primary: 'Fira Sans', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+
+
+.footer {
+  height: 8.563rem;
+  background-color: $color-primary;
+  color: $color-black;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $font-secondary;
+}
+
+.information {
+    color: $color-white;
+    width: 12.438rem;
+    text-align: end;
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: 0.875rem;
+}
+
+.copyright {
+    margin-top: 1rem;
+    color: $color-white;
+    width: 12.438rem;
+    text-align: end;
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: 0.75rem;
+}
