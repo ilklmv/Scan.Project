@@ -4,6 +4,7 @@ import Footer from './components/Footer/footer';
 import './App.scss';
 import About from './components/Main/about/about';
 import Slider from './components/Main/slider/slider';
+import Tariffs from './components/Main/tariff/tariffs';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <About />
       <Slider />
+      <Tariffs />
       <Footer />
     </div>
   );
