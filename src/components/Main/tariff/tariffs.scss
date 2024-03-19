@@ -12,6 +12,8 @@ $color-dark-blue: #5970FF;
 $font-primary: 'Fira Sans', sans-serif;
 $font-secondary: 'Inter', sans-serif;
 
+@import '../about/about.scss';
+
 .tariffs-container {
     margin: 1rem 5rem;
 }
@@ -101,4 +103,88 @@ $font-secondary: 'Inter', sans-serif;
 
 .choose-information {
     text-align: left;
+    margin-left: 1rem;
+
+    .tariff-btn {
+      margin-top: 1rem;
+      margin-left: 16rem;
+      margin-bottom: 0rem;
+      background-color: $color-dark-blue;
+      border: 0rem solid transparent;
+      border-radius: 10px;
+      width: 8.375rem;
+      height: 1.5rem;
+      color: $color-white;
+      font-family: $font-secondary;
+      font-size: 0.875rem;
+      font-weight: 400;
+      line-height: 1.063rem;
+      letter-spacing: 0.01rem;
+      text-align: center;
+
+    }
+
+    .price {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .value {
+      margin-right: 1rem;
+      font-family: $font-secondary;
+      font-size: 1.875rem;
+      font-weight: 500;
+      line-height: 2.25rem;
+      letter-spacing: 0.01rem;
+      text-align: left;
+    }
+
+    .value-through {
+      @extend .value;
+      text-decoration: line-through;
+      color: #808080;
+    }
+
+    .installment {
+      font-family: $font-secondary;
+      font-size: 1.1rem;
+      font-weight: 400;
+      line-height: 1.375rem;
+      letter-spacing: 0.01rem;
+      text-align: left;
+    }
+
+    .header-tariff-list {
+      font-family: $font-secondary;
+      font-size: 1.25rem;
+      font-weight: 500;
+      line-height: 1.5rem;
+      letter-spacing: 0.01rem;
+      text-align: left;
+    }
+
+    .tariff-list {
+      margin-bottom: 2rem;
+      font-family: $font-secondary;
+      font-size: 1.125rem;
+      font-weight: 400;
+      line-height: 1.375rem;
+      letter-spacing: 0.01rem;
+      text-align: left;
+      list-style: none;
+
+      li {
+        margin-bottom: 0.625rem; 
+        padding-left: 1.563rem; 
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23%23CCFFCC"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>'); /* устанавливаем фоновое изображение галочки */
+        background-repeat: no-repeat; 
+        background-size: 1.25rem; 
+        background-position: left center;
+      }
+    }
+
+    .requestData {
+      margin: 1rem 1rem;
+    }
 }
+
