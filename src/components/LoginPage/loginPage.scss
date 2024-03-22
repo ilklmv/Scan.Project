@@ -1,0 +1,32 @@
+// Основные цвета
+$color-primary: #029491;
+$color-black: #000000;
+$color-white: #FFFFFF;
+
+// Дополнительные цвета
+$color-orange: #FFB64F;
+$color-light-blue: #7CE3E1;
+$color-dark-blue: #5970FF;
+
+// Шрифт
+$font-primary: 'Fira Sans', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+
+.login-page {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.login-page-information {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    margin: 1rem 5rem;
+    width: 55.063rem;
+}
+
+.characters {
+    width: 20.11rem;
+    height: 21.377rem;
+}

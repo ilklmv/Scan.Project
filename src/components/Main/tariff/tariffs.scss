@@ -55,7 +55,7 @@ $font-secondary: 'Inter', sans-serif;
     background-color: #FFB64F;
   
     .header-block {
-      margin-left: 0.5rem;
+      margin-left: 1rem;
       margin-bottom: 0.5rem;
       grid-column: 1 / -1; // занимает все колонки
       grid-row: 1 / 2; // первая строка
@@ -68,7 +68,7 @@ $font-secondary: 'Inter', sans-serif;
     }
   
     .text-block {
-      margin-left: 0.5rem;
+      margin-left: 1rem;
       grid-column: 1 / 2; // первая колонка
       grid-row: 2 / 3; // вторая строка
       font-family: $font-secondary;
@@ -104,6 +104,15 @@ $font-secondary: 'Inter', sans-serif;
 .choose-information {
     text-align: left;
     margin-left: 1rem;
+    
+    .choose-information-price {
+      height: 110x;
+    }
+
+
+    .choose-information-list {
+      height: 110px;
+    }
 
     .tariff-btn {
       margin-top: 1rem;
