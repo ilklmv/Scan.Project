@@ -16,22 +16,20 @@ const LoginForm: React.FC = () => {
 
     return (
         <form className="login-form" onSubmit={handleSubmit}>
-            <button className="submit" type="submit">Войти</button>
-            <button className="submit" type="submit">Зарегистрироваться</button>
-            <div className="form-group">
-                <label htmlFor="login">Логин или номер телефона:</label>
-                <input type="text" id="login" required />
+            <div className="login-form-btn">
+                <button className="submit" type="submit">Войти</button>
+                <button className="submit" type="submit">Зарегистрироваться</button>
             </div>
             <div className="form-group">
-                <label htmlFor="password">Пароль</label>
-                <input type="password" id="password" required />
+                <label className="label" htmlFor="login">Логин или номер телефона:</label>
+                <input className="input" type="text" id="login" required />
             </div>
             <div className="form-group">
+                <label className="label" htmlFor="password">Пароль</label>
+                <input className="input" type="password" id="password" required />
+            </div>
                 <button className="requestData" type="submit">Войти</button>
-            </div>
-            <div className="form-group">
                 <button className="submit_1" onClick={handleForgotPassword}>Восстановить пароль</button>
-            </div>
             <div className="social-login">
                 <p className="login-social">Войти через:</p>
                 <div className="social-icons">

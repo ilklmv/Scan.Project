@@ -20,8 +20,14 @@ $font-secondary: 'Inter', sans-serif;
     border-radius: 0.625rem;
 }
 
-.submit {
+.login-form-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     margin: 2rem auto;
+}
+
+.submit {
     background-color: transparent;
     border: none;
     font-family: $font-secondary;
@@ -36,7 +42,31 @@ $font-secondary: 'Inter', sans-serif;
     cursor: pointer;
 }
 
-/*.form-group {}*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0rem auto;
+    width: 80%;
+}
+
+.label {
+    font-family: $font-secondary;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.21rem;
+    letter-spacing: 0.02rem;
+    text-align: left;
+    color: $color-primary;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.input {
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    height: 2.688rem;
+    border-radius: 0.313rem;
+}
 
 .submit_1 {
     margin-top: 1rem;
