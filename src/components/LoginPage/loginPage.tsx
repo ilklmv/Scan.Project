@@ -20,6 +20,7 @@ const LoginPage: React.FC = () => {
                 <h2 className="information_text1">Для оформления подписки на тариф, необходимо авторизоваться.</h2>
                 <img src={process.env.PUBLIC_URL + '/img/Characters.svg'} width={321.76} height={342.03} alt="Люди с ключом" />
             </div>
+            <img className="lock" src={process.env.PUBLIC_URL + '/img/lock.svg'} alt="Дверной замок" />
             <LoginForm />
         </div>
     );

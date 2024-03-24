@@ -16,6 +16,8 @@ $font-secondary: 'Inter', sans-serif;
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 0;
+    width: 100%;
 }
 
 .login-page-information {
@@ -29,4 +31,11 @@ $font-secondary: 'Inter', sans-serif;
 .characters {
     width: 20.11rem;
     height: 21.377rem;
+}
+
+.lock {
+    display: flex;
+    z-index: 1;
+    margin-left: 0rem;
+    margin-bottom: 30rem;
 }

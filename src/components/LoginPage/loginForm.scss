@@ -13,11 +13,12 @@ $font-primary: 'Fira Sans', sans-serif;
 $font-secondary: 'Inter', sans-serif;
 
 .login-form {
-    width: 429px;
-    height: 523px;
+    width: 26.813rem;
+    height: 32.688rem;
     background-color: $color-white;
     box-shadow: 0rem 0rem 1.25rem 0rem #00000033;
     border-radius: 0.625rem;
+    z-index: 0;
 }
 
 .login-form-btn {
@@ -31,9 +32,9 @@ $font-secondary: 'Inter', sans-serif;
     background-color: transparent;
     border: none;
     font-family: $font-secondary;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 19.36px;
+    line-height: 1.21rem;
     letter-spacing: 0.02rem;
     text-align: left;
     color: $color-primary;
@@ -57,13 +58,13 @@ $font-secondary: 'Inter', sans-serif;
     letter-spacing: 0.02rem;
     text-align: left;
     color: $color-primary;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
 }
 
 .input {
     border: 1px solid #C7C7C7;
-    box-shadow: 0px 0px 20px 0px #0000000D;
+    box-shadow: 0rem 0rem 1.25rem 0rem #0000000D;
     height: 2.688rem;
     border-radius: 0.313rem;
 }
@@ -73,9 +74,9 @@ $font-secondary: 'Inter', sans-serif;
     background-color: transparent;
     border: none;
     font-family: $font-secondary;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-weight: 400;
-    line-height: 16.94px;
+    line-height: 1.059rem;
     letter-spacing: 0.02rem;
     text-align: left;
     color: $color-dark-blue;
@@ -87,10 +88,10 @@ $font-secondary: 'Inter', sans-serif;
 .login-social {
     margin-left: 5rem;
     font-family: $font-secondary;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
-    line-height: 19.36px;
-    letter-spacing: 0.02em;
+    line-height: 1.21rem;
+    letter-spacing: 0.02rem;
     text-align: left;
     color: $color-primary;
 }
@@ -103,8 +104,8 @@ $font-secondary: 'Inter', sans-serif;
 
 .social-btn {
     margin-right: 0.5rem;
-    height: 31px;
-    width: 96px;
+    height: 1.938rem;
+    width: 6rem;
     background-color: transparent;
     border-radius: 3px;
     border: 1px solid #5970FF82;
