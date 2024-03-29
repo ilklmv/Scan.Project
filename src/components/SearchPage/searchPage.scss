@@ -1,0 +1,20 @@
+.search-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.search-image-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    margin-top: 10rem;
+}
+
+.image-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}

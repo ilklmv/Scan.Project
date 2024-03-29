@@ -1,10 +1,150 @@
+// Основные цвета
+$color-primary: #029491;
+$color-black: #000000;
+$color-white: #FFFFFF;
+
+// Дополнительные цвета
+$color-orange: #FFB64F;
+$color-light-blue: #7CE3E1;
+$color-dark-blue: #5970FF;
+
+// Шрифт
+$font-primary: 'Fira Sans', sans-serif;
+$font-secondary: 'Inter', sans-serif;
+
+.search-header {
+    width: 51.063rem;
+    font-family: $font-primary;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 3rem;
+    letter-spacing: 0.1rem;
+    text-align: left;
+}
+
+.search-text {
+    width: 33.375rem;
+    font-family: $font-secondary;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.506rem;
+    letter-spacing: 0.02rem;
+    text-align: left;
+}
+
 .search-form {
+    margin-top: 3rem;
     display: flex;
-    width: 35.75rem;
+    justify-content: space-between;
+    width: 54.5rem;
     height: 33.938rem;
+    background-color: $color-white;
+    box-shadow: 0rem 0rem 1.25rem 0rem #00000033;
+    border-radius: 0.625rem;
+    padding-left: 2rem;
+    padding-right: 3rem;
+    padding-top: 2rem;
 }
 
 .search-form-input {
     display: flex;
     flex-direction: column;
+    margin-top: 2rem;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    font-family: $font-secondary;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.361rem;
+    letter-spacing: 0.03rem;
+    text-align: left;
+}
+
+.text {
+    width: 15.125rem;
+    height: 2.688rem;
+    margin-top: 1rem;
+    font-family: $font-secondary;
+    font-size: 0.875rem;
+    background-color: $color-white;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    border-radius: 0.313rem;
+    text-align: center;
+}
+
+.option {
+    width: 15.125rem;
+    height: 2.688rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    font-family: $font-secondary;
+    font-size: 0.875rem;
+    background-color: $color-white;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    border-radius: 0.313rem;
+    text-align: left;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15.5l-7-9h14l-7 9z"/></svg>');
+    background-repeat: no-repeat;
+    background-position-x: 100%;
+    background-position-y: 50%;
+    background-size: 10%;
+}
+
+.search-range {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 23.25rem;
+}
+
+.date {
+    width: 11.0rem;
+    height: 2.688rem;
+    margin-top: 1rem;
+    font-family: $font-secondary;
+    font-size: 0.875rem;
+    background-color: $color-white;
+    border: 1px solid #C7C7C7;
+    box-shadow: 0px 0px 20px 0px #0000000D;
+    border-radius: 0.313rem;
+    text-align: center;
+}
+
+.checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25.375rem;
+    height: 15.25rem;
+    margin-bottom: 2.5rem;
+}
+
+.checkbox-value {
+    display: flex;
+    flex-direction: row;
+}
+
+input {
+    margin-right: 1rem;
+}
+
+.requestData {
+    margin-left: 5rem;
+}
+
+.footnote {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    letter-spacing: 0.03em;
+    text-align: right;
+    color: #949494;
 }

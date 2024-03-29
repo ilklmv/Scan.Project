@@ -1,17 +1,20 @@
-import React from "react";
+// SearchPage.tsx
+import React, { useState } from "react";
 import Header from "../Header/header";
 import SearchForm from "./searchForm";
+import ResultPage from "../SeacrhResultPage/searchResultPage";
+import './searchPage.scss';
 
 const SearchPage: React.FC = () => {
+    const [showResults, setShowResults] = useState(false); // Состояние для отображения результатов поиска
+
     const handleLoginClick = () => {
-        // Обработчик клика на кнопку "Войти"
-        // Реализация может быть разной, включая открытие модального окна, переход на другую страницу и т.д.
         console.log("Login button clicked");
     };
 
     const handleSearch = (query: any) => {
-        // Реализация обработчика поиска, например, отправка запроса на сервер
         console.log("Search query:", query);
+        setShowResults(true);
     };
 
     return (
@@ -19,7 +22,20 @@ const SearchPage: React.FC = () => {
             {process.env.REACT_APP_SHOW_HEADER === "true" && (
                 <Header onLoginClick={handleLoginClick} />
             )}
-            <SearchForm onSearch={handleSearch} />
+            {!showResults ? (
+                <SearchForm onSearch={handleSearch} />
+            ) : (
+                <ResultPage searchResults={[]} />
+            )}
+            {!showResults && (
+                <div className='search-image-container'>
+                    <div className="image-row">
+                        <img src={process.env.PUBLIC_URL + '/img/Document.svg'} alt="Документ" />
+                        <img src={process.env.PUBLIC_URL + '/img/Folders.svg'} alt="Папки" />
+                    </div>
+                    <img src={process.env.PUBLIC_URL + '/img/rocket.svg'} alt="Человек с лупой и ракета" />
+                </div>
+            )}
         </div>
     );
 };
