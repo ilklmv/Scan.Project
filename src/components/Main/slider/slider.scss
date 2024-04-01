@@ -13,7 +13,9 @@ $font-primary: 'Fira Sans', sans-serif;
 $font-secondary: 'Inter', sans-serif;
 
 .slider-container {
-    width: 100%;
+    display: block;
+    justify-content: center;
+    width: 90%;
     margin: 5rem 5rem;
 }
 
@@ -30,6 +32,7 @@ $font-secondary: 'Inter', sans-serif;
 .slider {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin-top: 5rem;
 }
 

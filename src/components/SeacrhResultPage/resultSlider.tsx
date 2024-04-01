@@ -1,52 +1,74 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import { Paper, Button } from "@material-ui/core";
 
-interface SearchResult {
-    title: string;
-    total: number;
-    risks: number;
-    // Добавьте другие поля, если необходимо
+const useStyles = makeStyles((theme) => ({
+  root: {
+    position: "relative",
+    maxWidth: 600,
+    margin: "auto",
+    overflow: "hidden",
+    padding: theme.spacing(2),
+  },
+  paper: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 200,
+    width: "100%",
+    transition: "transform 0.5s ease",
+    marginBottom: theme.spacing(2),
+  },
+  controls: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: theme.spacing(2),
+  },
+}));
+
+interface CarouselProps {
+  columns: { date: string; queries: number; risks: number }[];
 }
 
-const ResultSlider: React.FC<{ searchResults: SearchResult[] }> = ({ searchResults }) => {
-    
-  // Формируем слайды для слайдера
-  const slides = [
-    {
-      title: "Период",
-      total: "Всего",
-      risks: "Риски"
-    },
-    // Добавьте остальные данные для каждого дня из результатов поиска
-    ...searchResults.map((dayData: { title: any; total: any; risks: any; }) => ({
-      title: dayData.title,
-      total: dayData.total,
-      risks: dayData.risks
-    }))
-  ];
+const Carousel: React.FC<CarouselProps> = ({ columns }) => {
+  const classes = useStyles();
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Настройки слайдера
-  const settings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+  const nextColumn = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === columns.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevColumn = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? columns.length - 1 : prevIndex - 1
+    );
   };
 
   return (
-    <Slider {...settings}>
-      {slides.map((slide, index) => (
-        <div key={index}>
-          <h3>{slide.title}</h3>
-          <p>Всего: {slide.total}</p>
-          <p>Риски: {slide.risks}</p>
+    <div className={classes.root}>
+      <div className={classes.controls}>
+        <Button onClick={prevColumn}>Previous</Button>
+        <Button onClick={nextColumn}>Next</Button>
+      </div>
+      <Paper className={classes.paper} elevation={3}>
+        <div>
+          <span>Date</span>
+          <span>Queries</span>
+          <span>Risks</span>
         </div>
-      ))}
-    </Slider>
+        {columns[currentIndex] && (
+          <div>
+            <span>{columns[currentIndex].date}</span>
+            <span>{columns[currentIndex].queries}</span>
+            <span>{columns[currentIndex].risks}</span>
+          </div>
+        )}
+      </Paper>
+    </div>
   );
 };
 
-export default ResultSlider;
+export default Carousel;

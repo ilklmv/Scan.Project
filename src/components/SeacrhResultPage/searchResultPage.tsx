@@ -1,12 +1,11 @@
 import React from "react";
 import './searchResult.scss';
-import ResultSlider from "./resultSlider";
+import Carousel from "./resultSlider";
 
 interface SearchResult {
-    title: string;
-    total: number;
+    date: string;
+    queries: number;
     risks: number;
-    // Добавьте другие поля, если необходимо
 }
 
 interface SearchResultPageProps {
@@ -18,15 +17,15 @@ const ResultPage: React.FC<SearchResultPageProps> = ({ searchResults }) => {
         <div className="result-page">
             <div className="result-header">
                 <div className="result-header-text">
-                    <h2 className='search-header'>Найдите необходимые данные в пару кликов.</h2>
-                    <div className='search-text'>Задайте параметры поиска.</div>
+                    <h2 className='search-header'>Ищем. Скоро будут результаты</h2>
+                    <div className='search-text'>Поиск может занять некоторое время, просим сохранять терпение.</div>
                 </div>
                     <img src={process.env.PUBLIC_URL + '/img/girl.svg'} alt="Девушка с лупой" />
                 </div>
             <div className="general-summary">
-                <h2>Общая сводка</h2>
-                <p>Найдено 4 221 вариантов</p>
-                <ResultSlider searchResults={searchResults} />;
+                <h3 className="document-header">Общая сводка</h3>
+                <span className="result-value">Найдено 4 221 вариантов</span>
+                <Carousel columns={searchResults} />
                 <h3 className="document-header">Список документов</h3>
                 <div className="news">
                     <div className="list-document">

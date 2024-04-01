@@ -13,6 +13,8 @@ $font-primary: 'Fira Sans', sans-serif;
 $font-secondary: 'Inter', sans-serif;
 
 .login-form {
+    display: block;
+    justify-content: center;
     width: 26.813rem;
     height: 32.688rem;
     background-color: $color-white;
@@ -67,6 +69,22 @@ $font-secondary: 'Inter', sans-serif;
     box-shadow: 0rem 0rem 1.25rem 0rem #0000000D;
     height: 2.688rem;
     border-radius: 0.313rem;
+}
+
+.requestData_1 {
+    display: block;
+    justify-content: center;
+    margin: 1rem auto;
+    background-color: $color-dark-blue;
+    width: 20.938rem;
+    height: 3.688rem;
+    font-family: $font-secondary;
+    font-size: 1.375rem;
+    font-weight: 500;
+    color: $color-white;
+    border: transparent;
+    border-radius: 0.313rem;
+    cursor: pointer;
 }
 
 .submit_1 {
