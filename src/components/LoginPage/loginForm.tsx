@@ -1,12 +1,37 @@
 import React, { useState } from "react";
 import "./loginForm.scss";
 
+// Функция для проверки логина и пароля
+const authenticateUser = (username: string, password: string): boolean => {
+    const validCredentials: { [key: string]: string } = {
+        sf_student1: '4i2385j',
+        sf_student10: 'KHKfTXb',
+        sf_student3: '6z9ZFRs',
+        sf_student2: 'lV8xjCH',
+        sf_student4: 'Br1+tbG',
+        sf_student5: 'LuwAwJf',
+        sf_student6: 'eczpWCB',
+        sf_student7: 'P6VcKNf',
+        sf_student8: '5QB0KM/',
+        sf_student9: 'DTdEwAn'
+    };
+
+    // Проверяем, существуют ли введенные логин и пароль в списке допустимых учетных данных
+    if (validCredentials[username] === password) {
+        // Если пользователь аутентифицирован, сохраняем информацию о входе в локальное хранилище
+        localStorage.setItem('isLoggedIn', 'true');
+        return true;
+    } else {
+        return false;
+    }
+};
+
 const LoginForm: React.FC = () => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         
         // Проверка заполнения полей логина и пароля
@@ -15,27 +40,13 @@ const LoginForm: React.FC = () => {
             return;
         }
 
-        // Отправка запроса на сервер для авторизации
-        try {
-            const response = await fetch("account/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ login, password })
-            });
-
-            if (response.ok) {
-                // Получение данных токена авторизации и сохранение в localStorage
-                const data = await response.json();
-                localStorage.setItem("accessToken", data.accessToken);
-                localStorage.setItem("expire", data.expire);
-            } else {
-                setError("Неверный логин или пароль");
-            }
-        } catch (error) {
-            console.error("Ошибка авторизации:", error);
-            setError("Произошла ошибка при авторизации");
+        // Попытка аутентификации пользователя
+        const isAuthenticated = authenticateUser(login, password);
+        if (isAuthenticated) {
+            // Перенаправление на другую страницу или выполнение другой логики
+            window.location.href = "/"; // Например, перенаправление на главную страницу
+        } else {
+            setError("Неверный логин или пароль");
         }
     };
 
@@ -46,7 +57,7 @@ const LoginForm: React.FC = () => {
 
     return (
         <form className="login-form" onSubmit={handleSubmit}>
-            <div className="login-form-btn">
+             <div className="login-form-btn">
                 <button className="submit" type="submit">Войти</button>
                 <button className="submit" type="submit">Зарегистрироваться</button>
             </div>

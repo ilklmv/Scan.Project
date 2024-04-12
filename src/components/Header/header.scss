@@ -46,6 +46,56 @@ $font-secondary: 'Inter', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .limit-company {
+        display: flex;
+        flex-direction: column;
+        margin-right: 10rem;
+        background-color: #029491;
+        border-radius: 5px;
+        width: max-content;
+        height: max-content;
+        padding: 0.5rem 0.5rem;
+        background-color: #D9D9D9;
+
+        .company-used {
+            font-family: $font-secondary;
+            font-size: 0.625rem;
+            font-weight: 400;
+            line-height: 12.1px;
+            text-align: justify;
+        }
+
+        .limit-counter {
+            font-family: $font-secondary;
+            font-size: 0.625rem;
+            font-weight: 400;
+            line-height: 12.1px;
+            text-align: justify;       
+        }
+    }
+
+    .user-column {
+        display: flex;
+        flex-direction: column;
+        
+
+        .logout {
+            font-family: $font-secondary;
+            font-size: 0.625rem;
+            font-weight: 400;
+            line-height: 0.756rem;
+            text-align: left;
+            background-color: white;
+            border: none;
+            color: $color-primary;
+            cursor: pointer;
+            }
+        }
+
+    .avatar-user {
+        border-radius: 50%;
+    }
 }
 
 .signUp {
@@ -71,3 +121,5 @@ $font-secondary: 'Inter', sans-serif;
     height: 1.625rem;
     cursor: pointer;
 }
+
+

@@ -1,10 +1,10 @@
-import React, {useState} from "react";
-import './header.scss';
+import React from "react";
 
-const Menu: React.FC = () => {
-    
-    const [isLoggedIn, setIsLoggedIn] = useState(false); // Добавляем состояние для отслеживания статуса авторизации
+interface MenuProps {
+    isLoggedIn: boolean;
+}
 
+const Menu: React.FC<MenuProps> = ({ isLoggedIn }) => {
     return (
         <nav>
             <ul className="menu">
@@ -15,6 +15,6 @@ const Menu: React.FC = () => {
             </ul>
         </nav>
     );
+};
 
-}
 export default Menu;
