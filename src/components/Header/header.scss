@@ -12,7 +12,6 @@ $color-dark-blue: #5970FF;
 $font-primary: 'Fira Sans', sans-serif;
 $font-secondary: 'Inter', sans-serif;
 
-
 .header {
   background-color: $color-white;
   color: $color-black;
@@ -21,26 +20,107 @@ $font-secondary: 'Inter', sans-serif;
   justify-content: space-between;
   align-items: center;
   font-family: $font-secondary;
+
+  @media only screen and (max-width: 768px) {
+    margin: 1rem; // Изменяем отступ для мобильных устройств
+
+    .menu {
+      display: none; // Скрываем обычное меню на мобильных устройствах
+    }
+
+    .burger-menu {
+      display: block; // Показываем бургер-меню на мобильных устройствах
+    }
+  }
 }
 
 .menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 14.75rem;
-    list-style: none;
-    color: $color-black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 14.75rem;
+  list-style: none;
+  color: $color-black;
 
-    li a {
-        text-decoration: none; 
-        color: inherit; 
-        transition: color 0.3s ease;
+  li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
 
-        &:hover {
-            cursor: pointer;
-        }
+    &:hover {
+      cursor: pointer;
     }
+  }
 }
+
+.burger-menu {
+  display: none; // Скрываем бургер-меню по умолчанию
+  background-color: $color-primary;
+  list-style: none;
+}
+
+.burger-icon {
+    display: block;
+    cursor: pointer;
+    width: 30px; // Размер иконки бургера
+    height: 20px; // Высота иконки бургера
+    position: relative;
+  
+    // Создаем полоски для бургера
+    &::before,
+    &::after,
+    span {
+      content: '';
+      display: block;
+      background-color: $color-primary; // Цвет бургера
+      height: 3px; // Высота полоски
+      width: 100%; // Ширина полоски
+      position: absolute;
+      transition: transform 0.3s ease;
+    }
+  
+    // Положение полосок
+    &::before {
+      top: 0;
+    }
+  
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  
+    &::after {
+      bottom: 0;
+    }
+  }
+  
+  // Анимация для переключения в X
+  .burger-icon.active span {
+    transform: scaleX(0);
+  }
+  .burger-icon.active::before {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .burger-icon.active::after {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .menu-link,
+  .burger-menu-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: #FFFFFF; // Ссылки наследуют цвет от родительского элемента
+    text-decoration: none;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: $color-primary; // Изменяем цвет при наведении
+    }
+  }
 
 .accountPanel {
     display: flex;
@@ -121,5 +201,3 @@ $font-secondary: 'Inter', sans-serif;
     height: 1.625rem;
     cursor: pointer;
 }
-
-

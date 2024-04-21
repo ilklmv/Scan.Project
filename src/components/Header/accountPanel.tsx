@@ -11,7 +11,9 @@ const AccountPanel: React.FC<AccountPanelProps> = ({ loading, onLogout, onLoginC
     return (
         <div className="accountPanel">
             {loading ? (
-                <div>Загрузка...</div>
+                <div className="loading">
+                    <img className="loader" src={process.env.PUBLIC_URL + '/img/loader.svg'} alt="loader"/>
+                </div>
             ) : (
                 <>
                     {onLogout ? ( // Показываем панель для авторизованного пользователя
@@ -24,7 +26,7 @@ const AccountPanel: React.FC<AccountPanelProps> = ({ loading, onLogout, onLoginC
                                     <p>Алексей А.</p>
                                     <button className="logout" onClick={onLogout}>Выйти</button>
                                 </div>
-                                <img className="avatar-user" src={process.env.PUBLIC_URL + '/img/avatar.svg'} alt="line"/>
+                                <img className="avatar-user" src={process.env.PUBLIC_URL + '/img/avatar.svg'} alt="avatar"/>
                         </>
                     ) : ( // Показываем панель для неавторизованного пользователя
                         <>

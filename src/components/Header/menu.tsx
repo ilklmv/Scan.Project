@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface MenuProps {
-    isLoggedIn: boolean;
+  isLoggedIn: boolean;
 }
 
 const Menu: React.FC<MenuProps> = ({ isLoggedIn }) => {
-    return (
-        <nav>
-            <ul className="menu">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/about">Тарифы</a></li>
-                <li><a href="/contact">FAQ</a></li>
-                {isLoggedIn && <li><a href="/search">Запросить данные</a></li>}
-            </ul>
-        </nav>
-    );
+  // Состояние для отображения/скрытия бургер-меню
+  const [isBurgerMenuOpen, setBurgerMenuOpen] = useState(false);
+
+  return (
+    <nav>
+      {/* Обычное меню */}
+      <ul className="menu">
+        <li><a href="/" className="menu-link">Главная</a></li>
+        <li><a href="/about" className="menu-link">Тарифы</a></li>
+        <li><a href="/contact" className="menu-link">FAQ</a></li>
+      </ul>
+
+      {/* Бургер-меню */}
+      <div className="burger-icon" onClick={() => setBurgerMenuOpen(!isBurgerMenuOpen)}>
+        <span></span>
+      </div>
+
+      {/* Отображение бургер-меню при клике */}
+      {isBurgerMenuOpen && (
+        <ul className="burger-menu">
+          <li><a href="/" className="burger-menu-link">Главная</a></li>
+          <li><a href="/about" className="burger-menu-link">Тарифы</a></li>
+          <li><a href="/contact" className="burger-menu-link">FAQ</a></li>
+        </ul>
+      )}
+    </nav>
+  );
 };
 
 export default Menu;
